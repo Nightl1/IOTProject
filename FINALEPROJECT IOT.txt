@@ -1,0 +1,13 @@
+Features:
+The proposed system is about a smart waste management system. The system will detect the level of trash inside a GUI. It will provide real-time data visuals, enhance security measures, and trigger alerts when necessary. The system will utilize ultrasonic sensors, LEDs, buttons, and a graphical user interface (GUI) to achieve its objectives.
+Components:
+Blue Button
+Red Button
+Button
+Distance Sensor
+LED Bar
+Red LED
+Green LED
+Passive Buzzer
+Diagram:
+

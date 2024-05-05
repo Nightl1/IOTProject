@@ -1,0 +1,43 @@
+import tkinter as tk
+from tkinter import ttk
+
+class WasteManagementGUI:
+    def __init__(self, master):
+        self.master = master
+        master.title("Smart Waste Management System")
+
+        # Create label and disabled text field for waste level
+        self.waste_level_label = ttk.Label(master, text="Waste Level:")
+        self.waste_level_label.grid(row=0, column=0, padx=5, pady=5, sticky="w")
+        self.waste_level_text = ttk.Entry(master, state="disabled")
+        self.waste_level_text.grid(row=0, column=1, padx=5, pady=5)
+
+        # Create label, text field, and button for setting level
+        self.set_level_label = ttk.Label(master, text="Set Level:")
+        self.set_level_label.grid(row=1, column=0, padx=5, pady=5, sticky="w")
+        self.set_level_text = ttk.Entry(master)
+        self.set_level_text.grid(row=1, column=1, padx=5, pady=5)
+        self.set_level_button = ttk.Button(master, text="Set", command=self.set_level)
+        self.set_level_button.grid(row=1, column=2, padx=5, pady=5)
+
+        # Create label for status
+        self.status_label = ttk.Label(master, text="Status: Turned Off", foreground="red")
+        self.status_label.grid(row=2, column=0, columnspan=3, padx=5, pady=5)
+
+    def set_level(self):
+        try:
+            level = int(self.set_level_text.get())
+            self.waste_level_text.config(state="normal")
+            self.waste_level_text.delete(0, tk.END)
+            self.waste_level_text.insert(0, str(level) + "%")
+            self.waste_level_text.config(state="disabled")
+            if level >= 80:
+                self.status_label.config(text="Status: Turned On", foreground="green")
+            else:
+                self.status_label.config(text="Status: Turned Off", foreground="red")
+        except ValueError:
+            pass
+
+root = tk.Tk()
+waste_management_gui = WasteManagementGUI(root)
+root.mainloop()
