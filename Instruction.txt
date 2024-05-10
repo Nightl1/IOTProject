@@ -1,0 +1,7 @@
+Once you've set up the board, sensors, and buttons, run the program in the VNC.
+
+1) Once run, you'll see a GUI with a waste level label and disabled textfield. This is for showing the waste level inside the trash can. 
+2) Below is another label and textfield. This is used to set the content of the trash can. If you want it to set at 50%, the LED bar should be half full. Depending what the percentage you've set the waste level,the LED bar should show the result.
+3) Once you've entered the percentage, click the set button.
+4) To be authorized for use, enter the correct code sequence, blue, red, blue. So press the colored buttons in that sequence. If you enter it wrong, it will still say unauthorized use.
+5) Move your hand close to or away from the distance sensor and it should show the distance. If your hand is right next to the sensor, it should change the label: Garbage is full. When away, it should change to: Garbage is not full.
