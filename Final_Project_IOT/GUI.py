@@ -53,7 +53,7 @@ class WasteManagementGUI:
         else:
             self.unothorized_label.config(text="")
             
-        # Schedule the next call after 500 ms
+            # Schedule the next call after 500 ms
         self.master.after(10, self.act)
 
     def set_level(self):
@@ -63,10 +63,6 @@ class WasteManagementGUI:
             self.waste_level_text.delete(0, tk.END)
             self.waste_level_text.insert(0, str(level) + "%")
             self.waste_level_text.config(state="disabled")
-            #if level >= 80:
-            #    self.status_label.config(text="Status: Turned On", foreground="green")
-            #else:
-            #    self.status_label.config(text="Status: Turned Off", foreground="red")
         except ValueError:
             pass
 

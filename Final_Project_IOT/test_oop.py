@@ -93,3 +93,6 @@ class interactions:
     def get_authorization(self):
         print(self.unothorized_entry)
         return self.unothorized_entry
+    
+    def close(self):
+        GPIO.cleanup()

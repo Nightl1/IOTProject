@@ -25,14 +25,21 @@ class distance_module():
         GPIO.output(self.Tr, GPIO.HIGH)
         time.sleep(0.000015)
         GPIO.output(self.Tr, GPIO.LOW)
+        
+        # timout
+        max_time = 2
     
         t1 = time.time() # time when the initial sound wave was emitted
         
+        loops = 0
         # stall the code untill the sound signal comes back
-        while not GPIO.input(self.Ec):
+        while not GPIO.input(self.Ec) and not (time.time() - t1 > max_time):
+            loops += 1
             pass
         
-        while GPIO.input(self.Ec):
+        self.loops = 0
+        while GPIO.input(self.Ec) and not (time.time() - t1 > max_time):
+            loops += 1
             pass
     
         t2 = time.time() # the time when the return soud wave was captured
